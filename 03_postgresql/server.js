@@ -3,12 +3,13 @@ import express from "express";
 import { db } from './db.js';
 import { cars } from './schema.js';
 import { eq } from 'drizzle-orm';
+import cors from 'cors'; 
 
 const app = express();
 const PORT = 3000;
 
 const router = express.Router();
-
+app.use(cors()); 
 app.use(express.json());
 
 app.use((req, res, next) => {
